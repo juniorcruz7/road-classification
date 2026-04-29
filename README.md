@@ -1,51 +1,51 @@
-# Classificação de Superfícies de Vias
+# Road Surface Classification
  
-> Solução desenvolvida para o desafio técnico da **Voxar Labs**, que propõe classificar imagens de superfícies urbanas e rurais em três categorias: **Asphalt**, **Belgian Blocks** e **Off-road**.
- 
----
- 
-## 📋 Sobre o desafio
- 
-O objetivo não era maximizar performance, mas demonstrar capacidade de:
- 
-- Estruturar um problema de visão computacional
-- Desenvolver uma solução inicial viável
-- Investigar criticamente os resultados
-- Comunicar as decisões de forma clara
-O dataset é real, **altamente desbalanceado**, e inclui condições visuais desafiadoras — variações de iluminação, chuva, período noturno e diferentes dispositivos de captura.
+> Solution developed for the **Voxar Labs** technical challenge, which proposes classifying road surface images into three categories: **Asphalt**, **Belgian Blocks**, and **Off-road**.
  
 ---
  
-## 🧠 Abordagem
+## 📋 About the challenge
  
-A solução é baseada em **Transfer Learning** com a arquitetura **ResNet18** pré-treinada no ImageNet, escolhida por sua eficiência e bom desempenho em tarefas de classificação com datasets de tamanho moderado.
+The goal was not to maximize performance, but to demonstrate the ability to:
  
----
- 
-## 📁 Estrutura do notebook
- 
-O arquivo `road_classification.ipynb` concentra toda a solução — tanto a documentação técnica quanto o código — seguindo o formato exigido pelo edital. Está organizado nas seguintes seções:
- 
-| # | Seção | Descrição |
-|---|-------|-----------|
-| 1 | **Identificação da abordagem** | Descrição do modelo, justificativa e bibliotecas utilizadas |
-| 2 | **Entendimento do problema** | Análise inicial do dataset e dos desafios esperados |
-| 3 | **Pré-processamento e carregamento dos dados** | Transformações de entrada e análise de distribuição de classes |
-| 4 | **Pipeline de treinamento e avaliação** | Estrutura reutilizável entre os experimentos |
-| 5 | **Baseline** | Modelo com fine-tuning apenas na camada final, sem tratamento de desbalanceamento |
-| 6 | **Experimento 1 — Class Weights** | Hipótese: penalizar classes majoritárias melhora recall nas minoritárias |
-| 7 | **Experimento 2 — Fine-Tuning** | Hipótese: descongelar camadas mais profundas aumenta a capacidade de adaptação ao domínio |
-| 8 | **Experimento 3 — Data Augmentation** | Hipótese: variações sintéticas reduzem overfitting e melhoram generalização |
-| 9 | **Comparação entre os modelos** | Tabela consolidada de métricas |
-| 10 | **Análise crítica** | Onde a abordagem funcionou, onde falhou e próximos passos |
-| 11 | **Uso de ferramentas** | Transparência sobre o uso de LLMs no processo |
+- Structure a computer vision problem
+- Develop an initial viable solution
+- Critically investigate results
+- Communicate decisions clearly
+The dataset is real, **highly imbalanced**, and includes challenging visual conditions — lighting variations, rain, nighttime periods, and different capture devices.
  
 ---
  
-## 🛠️ Tecnologias
+## 🧠 Approach
  
-| Biblioteca | Uso |
-|------------|-----|
-| `torch` / `torchvision` | Modelo, treinamento e carregamento de dados |
-| `scikit-learn` | Métricas e matriz de confusão |
-| `matplotlib` / `seaborn` | Visualizações |
+The solution is based on **Transfer Learning** with the **ResNet18** architecture pre-trained on ImageNet, chosen for its efficiency and strong performance on classification tasks with moderate-sized datasets.
+ 
+---
+ 
+## 📁 Notebook structure
+ 
+The `road_classification.ipynb` file consolidates the entire solution — both the technical documentation and the code — following the format required by the challenge brief. It is organized into the following sections:
+ 
+| # | Section | Description |
+|---|---------|-------------|
+| 1 | **Approach overview** | Model description, justification, and libraries used |
+| 2 | **Problem understanding** | Initial dataset analysis and expected challenges |
+| 3 | **Preprocessing and data loading** | Input transformations and class distribution analysis |
+| 4 | **Training and evaluation pipeline** | Reusable structure shared across all experiments |
+| 5 | **Baseline** | Model with fine-tuning only on the final layer, no class imbalance handling |
+| 6 | **Experiment 1 — Class Weights** | Hypothesis: penalizing majority classes improves recall on minority ones |
+| 7 | **Experiment 2 — Fine-Tuning** | Hypothesis: unfreezing deeper layers increases domain adaptation capacity |
+| 8 | **Experiment 3 — Data Augmentation** | Hypothesis: synthetic variations reduce overfitting and improve generalization |
+| 9 | **Model comparison** | Consolidated metrics table across all experiments |
+| 10 | **Critical analysis** | Where the approach worked, where it failed, and next steps |
+| 11 | **Tool usage** | Transparency on the use of LLMs throughout the process |
+ 
+---
+ 
+## 🛠️ Tech stack
+ 
+| Library | Usage |
+|---------|-------|
+| `torch` / `torchvision` | Model, training, and data loading |
+| `scikit-learn` | Metrics and confusion matrix |
+| `matplotlib` / `seaborn` | Visualizations |
